@@ -14,7 +14,7 @@ public class AWSStorage {
     private AmazonS3 s3;
 
     public AWSStorage() {
-//shamal
+
         /*
          * The ProfileCredentialsProvider will return your [default]
          * credential profile by reading from the credentials file located at
@@ -84,6 +84,9 @@ public class AWSStorage {
         {
             System.out.println("Uploading a new object to S3 from a file\n");
             s3.putObject(new PutObjectRequest( folderName, imageName, image));
+            //make file public to be able to display it after upload
+            s3.setObjectAcl(folderName, imageName, CannedAccessControlList.PublicRead);
+
         } catch (AmazonServiceException ase) {
             logServiceException(ase);
         } catch (AmazonClientException ace) {
