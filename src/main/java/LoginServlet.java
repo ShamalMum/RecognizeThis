@@ -14,6 +14,13 @@ public class LoginServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String userName = req.getParameter("username");
+        String password = req.getParameter("password");
 
+        if (userName.equals("test") && password.equals("test"))
+        {
+            req.getSession().setAttribute("user",userName);
+        }
+        resp.sendRedirect(req.getContextPath() + "/upload");
     }
 }
