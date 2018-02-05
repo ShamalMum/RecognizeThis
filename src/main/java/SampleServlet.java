@@ -30,7 +30,7 @@ public class SampleServlet extends HttpServlet{
     @Override
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        //Test
 
         // Code to create a folder "S3 Bucket"
         String folderName = "xtremeind-wap-project";
