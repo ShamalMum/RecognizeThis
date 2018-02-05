@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 @WebServlet("/detectcelebs")
@@ -17,8 +18,10 @@ public class celebrityDetectionServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String photo = "party.jpg";
-        String bucket = "wapproject";
+        String bucket = this.getServletContext().getInitParameter("bucket-name");
+        AWSStorage awsStorage = new AWSStorage();
+        awsStorage.uploadImage(bucket, req.getPart("file"));
+        String photo = Paths.get(req.getPart("file").getSubmittedFileName()).getFileName().toString();
         AWSRekognition awsRek = new AWSRekognition();
         // Detect Celebrities
         List<Celebrity> celebs = awsRek.detectCelebrityInfo(bucket, photo);

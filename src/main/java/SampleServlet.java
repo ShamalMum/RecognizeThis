@@ -30,15 +30,8 @@ public class SampleServlet extends HttpServlet{
     @Override
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         // Code to create a folder "S3 Bucket"
-        String folderName = "recognize-this";
-        AWSStorage f = new AWSStorage();
-        f.createFolder(folderName);
-
-
-        // Code to create a file uploaded by user and upload it AWS S3
-        f.uploadImage(folderName, req.getPart("file"));
+        //awsStorage.createFolder(folderName);
         // list images in S3 bucket
         //f.listImagesInFolder(folderName);
     }
