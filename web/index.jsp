@@ -11,6 +11,10 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+    <form action="upload" method="post" id="uploadform" enctype="multipart/form-data">
+      <input type="text" name="description" />
+      <input type="file" name="file" />
+      <input type="submit" />
+    </form>
   </body>
 </html>
