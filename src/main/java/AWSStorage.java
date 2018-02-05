@@ -7,8 +7,11 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.*;
+import org.apache.commons.io.IOUtils;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Paths;
+import javax.servlet.http.Part;
 
 public class AWSStorage {
 
@@ -70,7 +73,7 @@ public class AWSStorage {
         }
         return true;
     }
-    public void uploadImage(String folderName, String imageName, File image) {
+    public void uploadImage(String folderName, Part filePart) {
 
         /*
          * Upload an object to your bucket - You can easily upload a file to
@@ -83,15 +86,26 @@ public class AWSStorage {
 
         try
         {
+            String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+            InputStream fileContent = filePart.getInputStream();
+            File image = File.createTempFile(fileName, ".jpg");
+            image.deleteOnExit();
+            FileOutputStream out = new FileOutputStream(image);
+            IOUtils.copy(fileContent, out);
+
             System.out.println("Uploading a new object to S3 from a file\n");
-            s3.putObject(new PutObjectRequest( folderName, imageName, image));
+            s3.putObject(new PutObjectRequest( folderName, fileName, image));
             //make file public to be able to display it after upload
-            s3.setObjectAcl(folderName, imageName, CannedAccessControlList.PublicRead);
+            s3.setObjectAcl(folderName, fileName, CannedAccessControlList.PublicRead);
 
         } catch (AmazonServiceException ase) {
             logServiceException(ase);
         } catch (AmazonClientException ace) {
             logClientException(ace);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
     public void downloadImage(String folderName, String imageName){
