@@ -5,6 +5,7 @@
     <script src="js/detectobjects.js"></script>
 </head>
 <body>
+<div id="container">
     <h1 class="title">Objects Detection</h1>
     <form action="detectobjects" method="post" id="uploadform" enctype="multipart/form-data">
         <div class="form-group">
@@ -14,5 +15,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
 </body>
 </html>
