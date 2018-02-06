@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>Home Page</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
-      <script src="http://malsup.github.com/jquery.form.js"></script>
-      <script src="scripts.js"></script>
-  </head>
-  <body>
+<head>
+    <title>Text Detection</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="scripts.js"></script>
+</head>
+<body>
     <form action="detecttext" method="post" id="uploadform" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputFile">File input</label>
@@ -16,5 +16,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-  </body>
+</body>
 </html>

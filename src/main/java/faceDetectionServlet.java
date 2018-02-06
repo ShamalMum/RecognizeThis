@@ -1,6 +1,7 @@
 import com.amazonaws.services.rekognition.model.FaceDetail;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -10,10 +11,11 @@ import java.nio.file.Paths;
 import java.util.List;
 
 @WebServlet("/detectfaces")
+@MultipartConfig
 public class faceDetectionServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+        req.getRequestDispatcher("/detectfaces.jsp").forward(req, resp);
     }
 
     @Override

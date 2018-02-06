@@ -6,6 +6,8 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.rekognition.AmazonRekognition;
 import com.amazonaws.services.rekognition.AmazonRekognitionClientBuilder;
 import com.amazonaws.services.rekognition.model.*;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,12 +130,14 @@ public class AWSRekognition {
                     System.out.println("Here's the default set of attributes:");
                 }
 
-//                ObjectMapper objectMapper = new ObjectMapper();
-//                System.out.println(objectMapper.writerWithDefaultPrettyPrinter()
-//                        .writeValueAsString(face));
+                ObjectMapper objectMapper = new ObjectMapper();
+                System.out.println(objectMapper.writerWithDefaultPrettyPrinter()
+                        .writeValueAsString(face));
             }
 
         } catch (AmazonRekognitionException e) {
+            e.printStackTrace();
+        } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
         return faceDetails;
