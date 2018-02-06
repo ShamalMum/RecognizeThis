@@ -26,5 +26,7 @@ public class textDetectionServlet extends HttpServlet{
         AWSRekognition awsRek = new AWSRekognition();
         // Detect Text
         List<TextDetection> textDetections = awsRek.detectTextInImage(bucket, photo);
+        resp.getWriter().write("https://s3.us-east-2.amazonaws.com/" + bucket + "/" + photo);
     }
 }
+

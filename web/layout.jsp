@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
-    <script src="scripts.js"></script>
+
 
     <link href="css/layout.css" rel="stylesheet">
     <script type="text/javascript">
