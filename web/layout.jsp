@@ -10,31 +10,12 @@
 <head>
     <title>Layout</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/layout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="js/layout.js" type="text/javascript"></script>
 
-
-    <link href="css/layout.css" rel="stylesheet">
-    <script type="text/javascript">
-        $(function() {
-            $("a").click(function () {
-                if(this.id=='antext') {
-                    $("#box").load("detecttext");
-                }
-                else if(this.id=='anobject'){
-                    $("#box").load("detectobjects");
-                }
-                else if(this.id=='anface'){
-                    $("#box").load("detectfaces");
-                }
-                else if(this.id=='ancele'){
-                    $("#box").load("detectcelebs");
-                }
-            });
-
-        });
-    </script>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -49,28 +30,33 @@
         </div>
     </div>
 </nav>
-<div class="container-fluid sample">
-    <div class="row">
-        <%--<div class="col-md-12">--%>
-            <%--<p>dcceccrecrevevvvvvvfgggrtvt</p>--%>
-        <%--</div>--%>
-    </div>
-    <div class="container-fluid text-center">
-        <div class="row content">
-            <div class="col-sm-2 sidenav">
-                <p><a id="antext">Text Detection</a></p>
-                <p><a id="anobject">Object Detection</a></p>
-                <p><a id="anface">Face Detection</a></p>
-                <p><a id="ancele">Celebrity Detection</a></p>
-            </div>
-            <div class="col-sm-10 text-left" id="box">
 
-            </div>
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="nav-item">
+                    <a id="anchrtext" class="nav-link active" data-toggle="pill">Text Detection</a>
+                </li>
+                <li role="presentation" class="nav-item">
+                    <a id="anchobject" class="nav-link" data-toggle="pill">Object Detection</a>
+                </li>
+                <li role="presentation" class="nav-item">
+                    <a id="anchface" class="nav-link" data-toggle="pill">Face Detection</a>
+                </li>
+                <li role="presentation" class="nav-item">
+                    <a id="anchcele" class="nav-link" data-toggle="pill">Celebrity Detection</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-10 text-left" id="box">
+
         </div>
     </div>
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
-    </footer>
+</div>
+<footer class="container-fluid text-center">
+    <p>Footer Text</p>
+</footer>
 
 </div>
 </body>
