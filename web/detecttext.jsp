@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>Text Detection</title>
-    <script src="js/detecttext.js"></script>
+    <script src="scripts.js"></script>
 </head>
 <body>
+<div id="container">
     <h1 class="title">Text Detection</h1>
-    <img id="sourceImage" src="" class="main-img" alt="Source image">
+    <img id="sourceImage" src="" class="img-fluid" alt="Source image">
     <form action="detecttext" method="post" id="uploadform" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputFile">File input</label>
@@ -15,5 +16,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+</div>
 </body>
 </html>
