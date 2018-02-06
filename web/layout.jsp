@@ -12,11 +12,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+    <script src="scripts.js"></script>
     <link href="css/layout.css" rel="stylesheet">
     <script type="text/javascript">
         $(document).ready(function () {
             $("button").click(function () {
-                $("#box").load("item");
+                if(this.id=='btntext') {
+                    $("#box").load("detecttext");
+                }
+                else if(this.id=='btnobject'){
+                    $("#box").load("detectobjects");
+                }
+                else if(this.id=='btnface'){
+                    $("#box").load("detectfaces");
+                }
+                else if(this.id=='btncele'){
+                    $("#box").load("detectcelebs");
+                }
             });
         });
     </script>
@@ -31,13 +45,18 @@
     <div class="row">
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-                <li><a data-toggle="pill">Menu 1</a></li>
-                <li><a data-toggle="pill" href="#menu2">Menu 2</a></li>
-                <li><a data-toggle="pill" href="#menu3">Menu 3</a></li>
-                <li>
-                    <button id="hello">hello</button>
-                </li>
+                <%--<li class="active"><a data-toggle="pill" href="#home">Home</a></li>--%>
+                <%--<li><a data-toggle="pill">Menu 1</a></li>--%>
+                <%--<li><a data-toggle="pill" href="#menu2">Menu 2</a></li>--%>
+                <%--<li><a data-toggle="pill" href="#menu3">Menu 3</a></li>--%>
+                <%--<li>--%>
+                    <%--<button id="hello">Text Detection</button>--%>
+                <%--</li>--%>
+
+                <li> <button id="btntext">Text Detection</button></li>
+                <li><button id="btnobject">Object Detection</button></li>
+                <li><button id="btnface">Face Detection</button></li>
+                <li><button id="btncele">Celebrity Detection</button></li>
             </ul>
         </div>
         <div class="col-md-9" id="box">
