@@ -1,0 +1,28 @@
+/* body{
+    margin: 20px;
+    font-size: 150%;
+      border: 1px dotted silver;
+}
+
+.footer{
+    position: fixed;
+     margin: 20px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:aquamarine;
+    color:black;
+    text-align: center;
+} */
+
+
+.sample {
+  border: 1px dotted silver;
+  padding: 15px;
+}
+[class^=col] {
+  border: 1px solid blue;
+}
+body {
+  margin: 20px;
+}
