@@ -1,5 +1,6 @@
 $(function () {
         //page is loaded this is first page request
+
         $("#box").load("detecttext");
 
         $("a").click(function () {
