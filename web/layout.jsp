@@ -12,65 +12,65 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="scripts.js"></script>
+
     <link href="css/layout.css" rel="stylesheet">
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("button").click(function () {
-                if(this.id=='btntext') {
+        $(function() {
+            $("a").click(function () {
+                if(this.id=='antext') {
                     $("#box").load("detecttext");
                 }
-                else if(this.id=='btnobject'){
+                else if(this.id=='anobject'){
                     $("#box").load("detectobjects");
                 }
-                else if(this.id=='btnface'){
+                else if(this.id=='anface'){
                     $("#box").load("detectfaces");
                 }
-                else if(this.id=='btncele'){
+                else if(this.id=='ancele'){
                     $("#box").load("detectcelebs");
                 }
             });
+
         });
     </script>
 </head>
 <body>
-<div class="container-fluid sample">
-    <div class="row">
-        <div class="col-md-12">
-            <p>dcceccrecrevevvvvvvfgggrtvt</p>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Logo</a>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <%--<li class="active"><a data-toggle="pill" href="#home">Home</a></li>--%>
-                <%--<li><a data-toggle="pill">Menu 1</a></li>--%>
-                <%--<li><a data-toggle="pill" href="#menu2">Menu 2</a></li>--%>
-                <%--<li><a data-toggle="pill" href="#menu3">Menu 3</a></li>--%>
-                <%--<li>--%>
-                    <%--<button id="hello">Text Detection</button>--%>
-                <%--</li>--%>
-
-                <li> <button id="btntext">Text Detection</button></li>
-                <li><button id="btnobject">Object Detection</button></li>
-                <li><button id="btnface">Face Detection</button></li>
-                <li><button id="btncele">Celebrity Detection</button></li>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
             </ul>
         </div>
-        <div class="col-md-9" id="box">
-            <div class="tab-content">
-
+    </div>
+</nav>
+<div class="container-fluid sample">
+    <div class="row">
+        <%--<div class="col-md-12">--%>
+            <%--<p>dcceccrecrevevvvvvvfgggrtvt</p>--%>
+        <%--</div>--%>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <p><a id="antext">Text Detection</a></p>
+                <p><a id="anobject">Object Detection</a></p>
+                <p><a id="anface">Face Detection</a></p>
+                <p><a id="ancele">Celebrity Detection</a></p>
+            </div>
+            <div class="col-sm-10 text-left" id="box">
 
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <p>dcceccrecrevevvvvvvrtvt</p>
-        </div>
-    </div>
+    <footer class="container-fluid text-center">
+        <p>Footer Text</p>
+    </footer>
 
 </div>
 </body>
