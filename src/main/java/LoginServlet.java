@@ -21,6 +21,6 @@ public class LoginServlet extends HttpServlet{
         {
             req.getSession().setAttribute("user",userName);
         }
-        resp.sendRedirect(req.getContextPath() + "/upload");
+        resp.sendRedirect(req.getContextPath() + "/layout.jsp");
     }
 }
