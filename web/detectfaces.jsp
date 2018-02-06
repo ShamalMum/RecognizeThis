@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Face Detection</title>
-    <script src="scripts.js"></script>
+    <script src="js/detectfaces.js"></script>
 </head>
 <body>
     <h1 class="title">Face Detection</h1>

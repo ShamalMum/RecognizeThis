@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Objects Detection</title>
-    <script src="scripts.js"></script>
+    <script src="js/detectobjects.js"></script>
 </head>
 <body>
     <h1 class="title">Objects Detection</h1>

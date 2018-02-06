@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Celebrities Detection</title>
-    <script src="scripts.js"></script>
+    <script src="js/detectcelebs.js"></script>
 </head>
 <body>
     <h1 class="title">Celebrities Detection</h1>
