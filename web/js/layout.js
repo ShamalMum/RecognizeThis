@@ -5,17 +5,16 @@ $(function () {
 
         $("a").click(function () {
             if (this.id == 'anchrtext') {
-                $("#box").load("detecttext #container");
+                $("#box").load("detecttext");
             }
             else if (this.id == 'anchobject') {
-                $("#box").load("detectobjects #container");
+                $("#box").load("detectobjects");
             }
             else if (this.id == 'anchface') {
-                $("#box").load("detectfaces #container");
+                $("#box").load("detectfaces");
             }
             else if (this.id == 'anchcele') {
-                $("#box").load("detectcelebs #container");
+                $("#box").load("detectcelebs");
             }
         });
-
     });

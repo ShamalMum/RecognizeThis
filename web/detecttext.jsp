@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Text Detection</title>
-    <script src="scripts.js"></script>
+    <script src="js/detecttext.js"></script>
 </head>
 <body>
 <div id="container">
