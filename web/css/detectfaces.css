@@ -1,0 +1,21 @@
+#accordion {
+    /*width: 500px;*/
+    border: 1px solid black;
+}
+
+.heading {
+    padding: 5px;
+    margin: 0;
+    background: #ddd;
+}
+
+.list{
+    padding: 0 5px;
+    list-style-type: none;
+}
+
+.item{
+    padding: 5px;
+
+}
+

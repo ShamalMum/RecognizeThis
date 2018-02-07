@@ -1,40 +1,49 @@
-$(function() {
+$(function () {
     $("#uploadform").ajaxForm({
-        success: function(data) {
+
+        success: function (data) {
+            $("#accordion").empty();
             alert("File has been uploaded successfully");
-            var faceDetail=JSON.parse(data)[1];
+            var faceDetail = JSON.parse(data)[1];
+            for (var i = 0; i < faceDetail.length; i++) {
+                var heading = $("<h3>").text(`Person ${i}`).addClass("heading");
+                $("#accordion").append(heading);
+                var list = $("<ul>").addClass("list");
+                $("#accordion").append(list);
 
-            for(var i=0;i<faceDetail.length;i++)
-            {
-                var arryA=faceDetail[i]
+                var arryface = faceDetail[i]
+                var object = arryface[1]
 
-                for(var j=0; j<arryA.length;j++){
-                        var x=arryA[j];
-                }
+                var low = object.ageRange[1].low;
+                var high = object.ageRange[1].high;
 
-                var low=x.ageRange[1].low;
-                var high=x.ageRange[1].high;
+                list.append($("<li>").addClass("item").
+                                text(`Age Range: ${object.ageRange[1].low} - ${object.ageRange[1].high} years old.`));
+                list.append($("<li>").addClass("item").
+                                text(`Similing: ${object.smile[1].value} , Accuracy: ${String(object.smile[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Eye Glasses: ${object.eyeglasses[1].value} , Accuracy: ${String(object.eyeglasses[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Sun Glasses: ${object.sunglasses[1].value} , Accuracy: ${String(object.sunglasses[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Gender: ${object.gender[1].value} , Accuracy: ${String(object.gender[1].confidence).slice(0, 5)}%`));
 
-                var sex=x.gender[1].value;
-                var confi=x.gender[1].confidence;
+                list.append($("<li>").addClass("item").
+                                text(`Beard: ${object.beard[1].value} , Accuracy: ${String(object.beard[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Mustache: ${object.mustache[1].value} , Accuracy: ${String(object.mustache[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Eyes Opened: ${object.eyesOpen[1].value} , Accuracy: ${String(object.eyesOpen[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("item").
+                                text(`Mouth Opened : ${object.mouthOpen[1].value} , Accuracy: ${String(object.mouthOpen[1].confidence).slice(0, 5)}%`));
 
-                $('#age').text("Age is between"+low+" and"+high);
-
-                $('#sex').text("SEX is "+sex+" and confidential ="+confi);
 
             }
-
-            //// var faceDetail2=faceDetail[0];
-            //
-            // var faceDetail3=faceDetail2[1];
-            // var faceDetail4=faceDetail3.boundingBox;
-            // var faceDetail5=faceDetail4[1].width;
-            //
-            // console.log(faceDetail5);
-
+            collapese();
 
         },
-        error: function(data) {
+        error: function (data) {
+            $("accordion").empty();
             $("#uploadform").text("Couldn't upload file");
         }
     });
@@ -51,29 +60,32 @@ $(function() {
         }
     }
 
-    $("#file").change(function(){
+    $("#file").change(function () {
         readURL(this);
     });
 
-    var accordion = $("#accordion");
-    var headings = $("h3");
-    var paragraphs = $("p");
+    function collapese() {
 
-    var animateAccordion = function(elem, duration, easing) {
-        paragraphs.stop(true, true).slideUp(duration, easing);
-        $(elem).stop(true, true).slideDown(duration, easing);
-    }
+        var accordion = $("#accordion");
+        var headings = $("#accordion h3");
+        var paragraphs = $("#accordion ul");
 
-    paragraphs.not(":first").hide();
-    accordion.on("click", "h3", function() {
-        var t = $(this);
-        var tPara = t.next();
-        if(!tPara.is(":visible")) {
-            tPara.trigger("showParagraph");
+        var animateAccordion = function (elem, duration, easing) {
+            paragraphs.stop(true, true).slideUp(duration, easing);
+            $(elem).stop(true, true).slideDown(duration, easing);
         }
-    });
 
-    accordion.on("showParagraph", "p", function() {
-        animateAccordion(this, 600, "easeInCirc");
-    });
+        paragraphs.not(":first").hide();
+        accordion.on("click", "h3", function () {
+            var t = $(this);
+            var tPara = t.next();
+            if (!tPara.is(":visible")) {
+                tPara.trigger("showParagraph");
+            }
+        });
+
+        accordion.on("showParagraph", "ul", function () {
+            animateAccordion(this, 600, "easeInCirc");
+        });
+    }
 });
