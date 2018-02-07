@@ -24,7 +24,7 @@ $(function() {
 
             }
 
-            // var faceDetail2=faceDetail[0];
+            //// var faceDetail2=faceDetail[0];
             //
             // var faceDetail3=faceDetail2[1];
             // var faceDetail4=faceDetail3.boundingBox;
