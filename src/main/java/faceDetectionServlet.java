@@ -1,4 +1,5 @@
 import com.amazonaws.services.rekognition.model.FaceDetail;
+import com.amazonaws.services.simpleworkflow.flow.JsonDataConverter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -27,5 +28,9 @@ public class faceDetectionServlet extends HttpServlet{
         AWSRekognition awsRek = new AWSRekognition();
         // Detect faces
         List<FaceDetail> faceDetails = awsRek.detectFacesInImage(bucket,photo);
+        JsonDataConverter jsonDC= new JsonDataConverter();
+        String response=jsonDC.toData(faceDetails);
+        resp.getWriter().write(response);
+        //resp.getWriter().write("https://s3.us-east-2.amazonaws.com/" + bucket + "/" + photo);
     }
 }

@@ -10,10 +10,11 @@
 <head>
     <title>Recongnize This</title>
     <link href="img/camera.png" type="image/gif" rel="shortcut icon"/>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="css/layout.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://malsup.github.com/jquery.form.js"></script>
     <script src="js/layout.js" type="text/javascript"></script>

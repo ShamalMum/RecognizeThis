@@ -5,16 +5,29 @@
     <script src="js/detectfaces.js"></script>
 </head>
 <body>
-<div id="container">
-    <h1 class="title">Face Detection</h1>
-    <form action="detectfaces" method="post" id="uploadform" enctype="multipart/form-data">
+<div class="row content">
+    <div class="col-sm-7">
+        <h1 class="title">Face Detection</h1>
+        <img src="img/avatar.jpg" id="sourceImage"class="img-responsive" alt="No Image">
+        <form action="detectfaces" method="post" id="uploadform" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="file" name="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+            <label for="file">File input</label>
+            <input type="file" id="file" name="file" class="form-control-file" aria-describedby="fileHelp">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
+    <div class="col-sm-5">
+        <div id="accordion">
+            <h3>Age Range</h3>
+            <p id="age">ssssss</p>
+
+            <h3>Gender</h3>
+            <p id="sex"></p>
+
+            <h3>Eye Glasses</h3>
+            <p>Lorem ipsum dolor</p>
+    </div>
 </div>
 </body>
 </html>
