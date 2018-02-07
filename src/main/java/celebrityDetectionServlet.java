@@ -1,4 +1,5 @@
 import com.amazonaws.services.rekognition.model.Celebrity;
+import com.amazonaws.services.simpleworkflow.flow.JsonDataConverter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -27,5 +28,7 @@ public class celebrityDetectionServlet extends HttpServlet{
         AWSRekognition awsRek = new AWSRekognition();
         // Detect Celebrities
         List<Celebrity> celebs = awsRek.detectCelebrityInfo(bucket, photo);
+        JsonDataConverter jsonDC = new JsonDataConverter();
+        resp.getWriter().write(jsonDC.toData(celebs));
     }
 }
