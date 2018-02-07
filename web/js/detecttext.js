@@ -11,7 +11,7 @@ $(function() {
             //alert("File has been uploaded successfully");
             var textLabels = JSON.parse(msg)[1];
 
-            var heading = $("<h3>").text('Words:').addClass("heading");
+            var heading = $("<h3>").text('Words:').addClass("alert alert-info heading");
             $("#accordion").append(heading);
             var list = $("<ul>").addClass("list");
             $("#accordion").append(list);
@@ -21,7 +21,7 @@ $(function() {
                 if (textlabel[1].type === "WORD")
                 {
                     console.log(textlabel[1].confidence);
-                    list.append($("<li>").addClass("item").text(`${textlabel[1].detectedText}`));
+                    list.append($("<li>").addClass("text-primary item").text(`${textlabel[1].detectedText}`));
                 }
             }
         },

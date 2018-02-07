@@ -10,7 +10,7 @@ $(function() {
             //alert("File has been uploaded successfully");
             var celebs = JSON.parse(msg)[1];
 
-            var heading = $("<h3>").text('Celebrities:').addClass("heading");
+            var heading = $("<h3>").text('Celebrities:').addClass("alert alert-info heading");
             $("#accordion").append(heading);
             var list = $("<ul>").addClass("list");
             $("#accordion").append(list);
@@ -19,7 +19,7 @@ $(function() {
             for (var i = 0, len = celebs.length; i < len; i++) {
                 var celeb = celebs[i];
                 //$("#resultsDiv").html($("#resultsDiv").html() + "Name: " + celeb[1].name+ "<br/>" + "Matching Confidence: " + celeb[1].matchConfidence + "<br/>");
-                list.append($("<li>").addClass("item").text(`Name: ${celeb[1].name} Accuracy: ${String(celeb[1].matchConfidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("text-primary item").text(`Name: ${celeb[1].name} Accuracy: ${String(celeb[1].matchConfidence).slice(0, 5)}%`));
             }
         },
         error: function(msg) {

@@ -10,7 +10,7 @@ $(function () {
             //alert("File has been uploaded successfully");
             var faceDetail = JSON.parse(data)[1];
             for (var i = 0; i < faceDetail.length; i++) {
-                var heading = $("<h3>").text(`Person ${i}`).addClass("heading");
+                var heading = $("<h3>").text(`Person ${i}`).addClass("alert alert-info heading");
                 $("#accordion").append(heading);
                 var list = $("<ul>").addClass("list");
                 $("#accordion").append(list);
@@ -21,24 +21,24 @@ $(function () {
                 var low = object.ageRange[1].low;
                 var high = object.ageRange[1].high;
 
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Age Range: ${object.ageRange[1].low} - ${object.ageRange[1].high} years old.`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Similing: ${object.smile[1].value} , Accuracy: ${String(object.smile[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Eye Glasses: ${object.eyeglasses[1].value} , Accuracy: ${String(object.eyeglasses[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Sun Glasses: ${object.sunglasses[1].value} , Accuracy: ${String(object.sunglasses[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Gender: ${object.gender[1].value} , Accuracy: ${String(object.gender[1].confidence).slice(0, 5)}%`));
 
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Beard: ${object.beard[1].value} , Accuracy: ${String(object.beard[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Mustache: ${object.mustache[1].value} , Accuracy: ${String(object.mustache[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Eyes Opened: ${object.eyesOpen[1].value} , Accuracy: ${String(object.eyesOpen[1].confidence).slice(0, 5)}%`));
-                list.append($("<li>").addClass("item").
+                list.append($("<li>").addClass("text-primary item").
                                 text(`Mouth Opened : ${object.mouthOpen[1].value} , Accuracy: ${String(object.mouthOpen[1].confidence).slice(0, 5)}%`));
 
 

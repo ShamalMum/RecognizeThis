@@ -10,7 +10,7 @@ $(function() {
             //alert("File has been uploaded successfully");
             var objects = JSON.parse(msg)[1];
 
-            var heading = $("<h3>").text('Objects:').addClass("heading");
+            var heading = $("<h3>").text('Objects:').addClass("alert alert-info heading");
             $("#accordion").append(heading);
             var list = $("<ul>").addClass("list");
             $("#accordion").append(list);
@@ -20,7 +20,7 @@ $(function() {
                 var object = objects[i];
                 //$("#resultsDiv").html($("#resultsDiv").html() + "Object Name: " + object[1].name+ "<br/>" + "Matching Confidence: " + object[1].confidence + "<br/>");
 
-                list.append($("<li>").addClass("item").text(`Object Name: ${object[1].name} Accuracy: ${String(object[1].confidence).slice(0, 5)}%`));
+                list.append($("<li>").addClass("text-primary item").text(`Object Name: ${object[1].name} Accuracy: ${String(object[1].confidence).slice(0, 5)}%`));
             }
         },
         error: function(msg) {
