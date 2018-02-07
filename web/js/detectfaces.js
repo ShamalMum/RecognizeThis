@@ -1,9 +1,13 @@
 $(function () {
     $("#uploadform").ajaxForm({
-
-        success: function (data) {
+        beforeSubmit: function (msg) {
             $("#accordion").empty();
-            alert("File has been uploaded successfully");
+            $("body").addClass("loading");
+
+        },
+        success: function (data) {
+            $("body").removeClass("loading");
+            //alert("File has been uploaded successfully");
             var faceDetail = JSON.parse(data)[1];
             for (var i = 0; i < faceDetail.length; i++) {
                 var heading = $("<h3>").text(`Person ${i}`).addClass("heading");

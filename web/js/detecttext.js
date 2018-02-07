@@ -1,8 +1,14 @@
 $(function() {
     $("#uploadform").ajaxForm({
-        success: function(msg) {
+        beforeSubmit: function (msg) {
             $("#accordion").empty();
-            alert("File has been uploaded successfully");
+            $("body").addClass("loading");
+
+        },
+        success: function(msg) {
+            $("body").removeClass("loading");
+
+            //alert("File has been uploaded successfully");
             var textLabels = JSON.parse(msg)[1];
 
             var heading = $("<h3>").text('Words:').addClass("heading");
