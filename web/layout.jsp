@@ -24,7 +24,8 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#">Recognize This</a>
+
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -58,7 +59,7 @@
     </div>
 </div>
 <footer class="container-fluid text-center">
-    <p>Footer Text</p>
+    <p>&#x000A9;&nbsp;2018 Maharishi University of Management Fairfield IOWA All rights reserved.</p>
 </footer>
 
 </div>

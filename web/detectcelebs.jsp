@@ -3,29 +3,28 @@
 <head>
     <title>Celebrities Detection</title>
     <script src="js/detectcelebs.js"></script>
+    <link href="css/detectfaces.css" rel="stylesheet">
 </head>
 <body>
-<div id="container">
-    <h1 class="title">Celebrities Detection</h1>
     <div class="row">
-        <div class="col" style="float: left">
-            <img style="max-width:500px;" id="sourceImage" src="" class="img-fluid" alt="Source image">
+        <div class="col-sm-7">
+            <h1 class="title">Celebrities Detection</h1>
+            <img src="img/avatar.jpg" id="sourceImage" class="img-responsive" alt="No Image">
             <form action="detectcelebs" method="post" id="uploadform" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="file" name="file" class="form-control-file" id="exampleInputFile"
-                           aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for
-                        the above input. It's a bit lighter and easily wraps to a new line.
-                    </small>
+                    <label for="file">File input</label>
+                    <input type="file" id="file" name="file" class="form-control-file"  aria-describedby="fileHelp">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
-        <div class="col" id="resultsDiv">
+        <div class="col-sm-5">
+            <h2>Result:</h2>
+            <div id="accordion">
 
+
+            </div>
         </div>
-    </div>
 </div>
 </body>
 </html>

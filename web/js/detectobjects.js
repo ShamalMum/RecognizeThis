@@ -1,13 +1,21 @@
 $(function() {
     $("#uploadform").ajaxForm({
         success: function(msg) {
+            $("#accordion").empty();
             alert("File has been uploaded successfully");
-            // $("#sourceImage").attr('src',msg);
             var objects = JSON.parse(msg)[1];
-            console.log(objects);
+
+            var heading = $("<h3>").text('Objects:').addClass("heading");
+            $("#accordion").append(heading);
+            var list = $("<ul>").addClass("list");
+            $("#accordion").append(list);
+
+            //console.log(objects);
             for (var i = 0, len = objects.length; i < len; i++) {
                 var object = objects[i];
-                $("#resultsDiv").html($("#resultsDiv").html() + "Object Name: " + object[1].name+ "<br/>" + "Matching Confidence: " + object[1].confidence + "<br/>");
+                //$("#resultsDiv").html($("#resultsDiv").html() + "Object Name: " + object[1].name+ "<br/>" + "Matching Confidence: " + object[1].confidence + "<br/>");
+
+                list.append($("<li>").addClass("item").text(`Object Name: ${object[1].name} Accuracy: ${String(object[1].confidence).slice(0, 5)}%`));
             }
         },
         error: function(msg) {

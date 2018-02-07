@@ -3,26 +3,25 @@
 <head>
     <title>Text Detection</title>
     <script src="js/detecttext.js"></script>
+    <link href="css/detectfaces.css" rel="stylesheet">
 </head>
-<body>
-<div id="container">
-    <h1 class="title">Text Detection</h1>
-    <div class="row">
-        <div class="col" style="float: left">
-            <img style="max-width:500px;" id="sourceImage" src="" class="img-fluid" alt="Source image">
-            <form action="detecttext" method="post" id="uploadform" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <input type="file" id="file" name="file" class="form-control-file" id="exampleInputFile"
-                           aria-describedby="fileHelp">
-                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for
-                        the above input. It's a bit lighter and easily wraps to a new line.
-                    </small>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-        <div class="col" id="resultsDiv">
+<body></body>
+<div class="row">
+    <div class="col-sm-7">
+        <h1 class="title">Text Detection</h1>
+        <img src="img/avatar.jpg" id="sourceImage" class="img-responsive" alt="No Image">
+        <form action="detecttext" method="post" id="uploadform" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">File input</label>
+                <input type="file" id="file" name="file" class="form-control-file" aria-describedby="fileHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-sm-5">
+        <h2>Result:</h2>
+        <div id="accordion">
+
 
         </div>
     </div>

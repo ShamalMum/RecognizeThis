@@ -1,14 +1,21 @@
 $(function() {
     $("#uploadform").ajaxForm({
         success: function(msg) {
+            $("#accordion").empty();
             alert("File has been uploaded successfully");
             var textLabels = JSON.parse(msg)[1];
+
+            var heading = $("<h3>").text('Words:').addClass("heading");
+            $("#accordion").append(heading);
+            var list = $("<ul>").addClass("list");
+            $("#accordion").append(list);
+
             for (var i = 0, len = textLabels.length; i < len; i++) {
                 var textlabel = textLabels[i];
                 if (textlabel[1].type === "WORD")
                 {
-                    $("#resultsDiv").html($("#resultsDiv").html() + textlabel[1].detectedText + " | ");
-                    // console.log(textlabel[1].confidence);
+                    console.log(textlabel[1].confidence);
+                    list.append($("<li>").addClass("item").text(`${textlabel[1].detectedText}`));
                 }
             }
         },
