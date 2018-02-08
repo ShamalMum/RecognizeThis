@@ -9,7 +9,6 @@
 <div class="row content">
     <div class="col-sm-7">
         <h1 class="title">Face Detection</h1>
-        <img src="img/avatar.jpg" id="sourceImage" class="img-responsive" alt="No Image">
         <form action="detectfaces" method="post" id="uploadform" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="file">File input</label>
@@ -17,6 +16,7 @@
             </div>
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
         </form>
+        <img src="img/avatar.jpg" id="sourceImage" class="img-responsive" alt="No Image">
     </div>
     <div class="col-sm-5">
         <h2>Result:</h2>
