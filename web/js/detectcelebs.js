@@ -18,8 +18,18 @@ $(function() {
             console.log(celebs);
             for (var i = 0, len = celebs.length; i < len; i++) {
                 var celeb = celebs[i];
+                //var face = celeb[1].face;
+                console.log($('#sourceImage').width());
+                var thumpWidth = parseFloat($('#sourceImage').width()) * parseFloat(celeb[1].face[1].boundingBox[1].width);
+                var thumpHeight = parseFloat($('#sourceImage').height()) * parseFloat(celeb[1].face[1].boundingBox[1].height);
+                var thumpTop = celeb[1].face[1].boundingBox[1].top;
+                var thumpLeft = celeb[1].face[1].boundingBox[1].left;
+                console.log($("#sourceImage").attr("src"));
+                // list.append($("<img>").width(thumpWidth + "px").height(thumpHeight + "px").attr("src",$("#sourceImage").attr("src")).addClass("thumbnail"));
+
                 //$("#resultsDiv").html($("#resultsDiv").html() + "Name: " + celeb[1].name+ "<br/>" + "Matching Confidence: " + celeb[1].matchConfidence + "<br/>");
                 list.append($("<li>").addClass("text-primary item").text(`Name: ${celeb[1].name} Accuracy: ${String(celeb[1].matchConfidence).slice(0, 5)}%`));
+
             }
         },
         error: function(msg) {
