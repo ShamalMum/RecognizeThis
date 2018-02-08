@@ -59,7 +59,7 @@
     </div>
 </div>
 <footer class="container-fluid text-center">
-    <p>&#x000A9;&nbsp;2018 Maharishi University of Management Fairfield IOWA All rights reserved.</p>
+    <p>&#x000A9;&nbsp;2018 Maharishi University of Management. All rights reserved.</p>
 </footer>
 
 </div>

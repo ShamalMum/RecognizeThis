@@ -12,7 +12,7 @@
 
 <body class="text-center">
 <form class="form-signin" action="/login" method="post">
-    <img class="mb-4" src="/img/logo.png" alt="" width="72" height="72">
+    <img class="mb-4" src="https://semaine-production.s3.amazonaws.com/products/product/image/4875/medium_Shazam_Masterbrand_Logo.jpg" alt="" width="144" height="144">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="username" class="sr-only">Email address</label>
     <input type="text" id="username" class="form-control" placeholder="User Name" required="" autofocus="" name="username">
