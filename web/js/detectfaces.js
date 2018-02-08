@@ -10,7 +10,7 @@ $(function () {
             //alert("File has been uploaded successfully");
             var faceDetail = JSON.parse(data)[1];
             for (var i = 0; i < faceDetail.length; i++) {
-                var heading = $("<h3>").text(`Person ${i}`).addClass("alert alert-info heading");
+                var heading = $("<h3>").text(`Person ${i+1}`).addClass("alert alert-info heading");
                 $("#accordion").append(heading);
                 var list = $("<ul>").addClass("list");
                 $("#accordion").append(list);
